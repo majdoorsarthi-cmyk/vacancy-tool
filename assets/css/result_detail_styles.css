@@ -1,0 +1,164 @@
+/*
+=====================================================
+VACANCY RESULT DETAIL PAGE STYLES
+=====================================================
+*/
+.result-detail-page {
+    padding: 30px 0;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #fdfdfd;
+    border-bottom: 3px solid #ffc107;
+    border-radius: 8px 8px 0 0;
+}
+
+.result-main-title {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+/* Detail Grid Layout */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+}
+
+/* Status Card */
+.result-status-card {
+    background: #e6ffed; /* Light green/success color */
+    border: 1px solid #c3e6cb;
+    border-left: 5px solid #28a745; /* Dark green accent */
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.result-status-card h2 {
+    color: #155724;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+.result-status-card .status-date {
+    font-size: 1.1em;
+    color: #155724;
+    font-weight: 500;
+}
+
+/* Post Content */
+.post-content h3 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.6rem;
+}
+.rich-content p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Important Links */
+.important-links-section {
+    margin-top: 40px;
+    padding: 30px;
+    background: #fff3cd; /* Light warning color */
+    border-radius: 8px;
+    border: 1px solid #ffeeba;
+}
+.important-links-section h3 {
+    color: #856404;
+    border-bottom: 2px dashed #ffc107;
+}
+.result-links {
+    list-style: none;
+    padding: 0;
+}
+.result-links li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fff9e6;
+    border-radius: 4px;
+}
+.btn-download {
+    display: block;
+    padding: 12px 20px;
+    background-color: #dc3545; /* Red for urgent action/download */
+    color: white !important;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+.btn-download:hover {
+    background-color: #c82333;
+}
+.btn-official {
+    display: block;
+    padding: 10px;
+    background-color: #007bff;
+    color: white !important;
+    text-align: center;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+/* Sidebar */
+.sidebar-info .sidebar-widget {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+.sidebar-info h3 {
+    font-size: 1.3rem;
+    color: #007bff;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.sidebar-info ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar-info li {
+    padding: 5px 0;
+    font-size: 0.95em;
+    color: #555;
+}
+.adsense-placeholder {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e9e9e9;
+    color: #666;
+    font-style: italic;
+    border: 1px dashed #ccc;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .detail-grid {
+        grid-template-columns: 1fr; /* Stack on mobile */
+    }
+}
+@media (max-width: 576px) {
+    .result-main-title {
+        font-size: 1.8rem;
+    }
+}

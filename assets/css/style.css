@@ -1,0 +1,1782 @@
+/* ==================================== */
+/* 1. Global & Typography */
+/* ==================================== */
+:root {
+    --primary-color: #007bff; /* Vibrant Blue */
+    --primary-hover: #0056b3;
+    --secondary-color: #28a745; /* Success Green (Job) */
+    --result-color: #ffc107; /* Yellow (Result) */
+    --admit-color: #dc3545; /* Red (Admit Card) */
+    --other-color: #6c757d; /* Gray (Other) */
+
+    --background-light: #f4f6f9; /* Soft Light Gray Background */
+    --card-background: #ffffff;
+    --text-dark: #343a40;
+    --text-muted: #6c757d;
+    --card-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Enhanced shadow */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+.container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    color: var(--text-dark);
+    font-weight: 700;
+}
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: var(--primary-hover);
+}
+
+/* ==================================== */
+/* 2. Header & Navigation (unchanged base) */
+/* ==================================== */
+header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-nav ul li a {
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-weight: 600;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 4px;
+}
+
+.main-nav ul li a:hover {
+    color: var(--primary-color);
+    background: rgba(0, 123, 255, 0.1);
+}
+
+.admin-link {
+    background: var(--primary-color);
+    color: white !important;
+    padding: 8px 15px !important;
+}
+.admin-link:hover {
+    background: var(--primary-hover);
+    color: white !important;
+}
+
+
+/* ==================================== */
+/* 3. Live Notification Bar */
+/* ==================================== */
+.live-bar {
+    background: #ff4136;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    font-weight: 700;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    margin-bottom: 25px;
+}
+
+.live-bar .notification-link {
+    color: #ffed8d;
+    text-decoration: none;
+    animation: pulse 1.5s infinite; 
+}
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.02); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ==================================== */
+/* 4. Index Page Styles (New Design) */
+/* ==================================== */
+
+/* ==================================== */
+/* 4. Hero Section (केंद्रित और आकर्षक) */
+/* ==================================== */
+.hero-section {
+    background-color: var(--primary-color); /* प्राथमिक रंग की पृष्ठभूमि */
+    /* आप यहां एक आकर्षक इमेज भी लगा सकते हैं */
+    /* background-image: url('path/to/image.jpg'); */
+    color: white;
+    padding: 60px 0; /* ऊपर-नीचे थोड़ी जगह */
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.1); /* हल्का शैडो */
+}
+
+.hero-content {
+    max-width: 800px; /* Hero Content को केंद्र में और छोटा रखें */
+    margin: 0 auto;
+}
+
+.hero-section h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    animation: fadeInDown 0.8s ease-out; /* आकर्षक एनीमेशन */
+}
+
+.hero-section .tagline {
+    font-size: 1.1em;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+/* ==================================== */
+/* 5. Stylish Search Form */
+/* ==================================== */
+.filter-area {
+    width: 100%;
+    margin-top: 20px;
+}
+.filter-form.stylish-search {
+    display: flex;
+    max-width: 600px; /* सर्च बार को केंद्रित और छोटा करें */
+    margin: 0 auto;
+    background: white;
+    border-radius: 50px; /* गोल किनारे */
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* गहरा शैडो */
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 15px 25px;
+    border: none;
+    font-size: 1em;
+    outline: none;
+    color: var(--text-dark);
+}
+
+.btn-search {
+    background-color: var(--secondary-color); /* हरा रंग (Call to Action) */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-search:hover {
+    background-color: #218838; /* गहरा हरा */
+    transform: translateY(-1px);
+}
+
+/* Animation for H1 (अगर आप इसे header.php में नहीं लगा रहे हैं) */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Fixes */
+@media (max-width: 650px) {
+    .hero-section {
+        padding: 40px 15px;
+    }
+    .hero-section h1 {
+        font-size: 2em;
+    }
+    .filter-form.stylish-search {
+        flex-direction: column;
+        border-radius: 10px;
+        max-width: 90%;
+    }
+    .search-input {
+        padding: 12px 15px;
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 10px 10px 0 0;
+    }
+    .btn-search {
+        padding: 12px 15px;
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+    }
+}
+
+
+/* ==================================== */
+/* 5. Footer (unchanged base) */
+/* ==================================== */
+footer {
+    background: var(--text-dark);
+    color: #e9ecef;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-links a {
+    color: #e9ecef;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+
+/* ==================================== */
+/* 6. Responsive Design */
+/* ==================================== */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section {
+        padding: 40px 0;
+    }
+    .main-nav {
+        flex-direction: column;
+    }
+    .main-nav ul {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .filter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-form .search-input, .btn-search {
+        width: 100%;
+    }
+    .category-tabs {
+        justify-content: flex-start; /* छोटे स्क्रीन पर स्क्रॉल करने योग्य */
+    }
+    .tab-link {
+        padding: 15px 15px;
+        font-size: 0.9em;
+    }
+    .card-grid {
+        grid-template-columns: 1fr; /* सिंगल कॉलम */
+    }
+}
+/* --- Contact Page and General Form Styles --- */
+
+/* Alert Messages (For Success/Error Status) */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Hero Section for Contact Page */
+.contact-hero {
+    background: linear-gradient(135deg, #17a2b8 0%, #007bff 100%); /* Teal to Blue Gradient */
+    color: white;
+    padding: 60px 0;
+    margin-bottom: 40px;
+}
+.contact-hero h1 { 
+    color: white; 
+    font-size: 2.8rem;
+}
+.contact-hero .tagline {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Contact Grid Layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1/3 info, 2/3 form */
+    gap: 30px;
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* मोबाइल पर सिंगल कॉलम */
+    }
+}
+
+/* Contact Info Box */
+.contact-info-box {
+    background: var(--background-light);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--secondary-color);
+}
+.contact-info-box h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+}
+.contact-info-box p {
+    margin: 15px 0;
+}
+.contact-info-box i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+/* Contact Form Styling */
+.contact-form-wrapper h2 {
+    margin-top: 0;
+    color: var(--text-dark);
+}
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1em;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+.btn-full-width {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-full-width:hover {
+    background: var(--primary-hover);
+}
+/* Hero Section Styling */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), #20c997);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.hero-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+.hero-section .tagline {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Search Form Styling (Hero Section के अंदर) */
+.filter-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.filter-form .search-input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 1em;
+}
+.filter-form .btn-primary {
+    padding: 12px 25px;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Main Content Grid (70/30 Split) */
+.main-grid {
+    display: flex;
+    gap: 30px;
+}
+.main-content-column {
+    flex: 3; /* 70% width */
+    min-width: 0;
+}
+.sidebar-column {
+    flex: 1; /* 30% width */
+    min-width: 300px; /* विज्ञापन के लिए न्यूनतम चौड़ाई */
+}
+
+/* Sidebar Widget Styling */
+.sidebar-widget {
+    background: var(--card-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 25px;
+}
+.sidebar-widget h3 {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+.sidebar-widget ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar-widget li a {
+    display: block;
+    padding: 8px 0;
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--border-color);
+}
+.sidebar-widget li:last-child a {
+    border-bottom: none;
+}
+
+/* Category Tabs Styling */
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 20px;
+}
+.tab-link {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+}
+.tab-link:hover {
+    color: var(--text-dark);
+}
+.tab-link.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* Card Grid Styling */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.vacancy-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s;
+    border-left: 5px solid var(--primary-color); /* डिफ़ॉल्ट */
+    position: relative;
+}
+.vacancy-card h3 {
+    font-size: 1.3em;
+    margin-top: 5px;
+}
+.vacancy-card h3 a {
+    color: var(--text-dark);
+    text-decoration: none;
+}
+.vacancy-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+}
+.btn-details {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Category Badges for Cards */
+.category-badge {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.badge-job { background: #28a745; }
+.badge-result { background: #ffc107; color: #333; }
+.badge-admit_card { background: #dc3545; }
+.badge-other { background: #6c757d; }
+
+/* AdSense Slot Styling */
+.adsense-banner-top, .adsense-banner-bottom {
+    margin: 30px 0;
+    text-align: center;
+}
+.adsense-responsive-slot, .adsense-300x250-slot {
+    /* Google AdSense ins टैग के लिए कंटेनर */
+    display: flex;
+    justify-content: center;
+}
+
+/* Media Query for Responsiveness (साइडबार को मोबाइल पर नीचे ले जाना) */
+@media (max-width: 992px) {
+    .main-grid {
+        flex-direction: column;
+    }
+    .sidebar-column {
+        min-width: 100%;
+    }
+}
+/* ==================================== */
+/* 8. Breaking News Marquee Style */
+/* ==================================== */
+.breaking-news-marquee {
+    background: #fff3cd; /* हल्का पीला (Alert Warning जैसा) */
+    border: 1px solid #ffeeba;
+    padding: 8px 0;
+    margin-bottom: 20px;
+}
+.breaking-news-marquee .container {
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* मुख्य Marquee इफ़ेक्ट के लिए ज़रूरी */
+}
+.news-label {
+    background: #ffc107; /* पीला लेबल */
+    color: #333;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 0.85em;
+    border-radius: 5px;
+    flex-shrink: 0; /* लेबल को सिकुड़ने से रोकें */
+    margin-right: 15px;
+}
+
+/* Marquee Animation Container (यहाँ असली चलती हुई पट्टी है) */
+.marquee-content-wrapper {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite; /* 30s स्पीड */
+    width: 100%;
+}
+/* अगर आप CSS Animation नहीं इस्तेमाल करना चाहते तो इस पर display: flex सेट करें */
+.marquee-content {
+    display: flex;
+    /* .marquee-content-wrapper में डुप्लीकेट होने पर यह दोनों पट्टी बनाता है */
+}
+
+/* Marquee Item Style */
+.marquee-item {
+    padding: 0 20px;
+    font-size: 0.95em;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.marquee-item:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.item-badge {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* 🚩 CSS Keyframe Animation: यह Marquee इफ़ेक्ट देता है */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* यह 50% इसलिए क्योंकि कंटेंट को डुप्लीकेट किया गया है */
+}
+
+/* Responsive Fix */
+@media (max-width: 600px) {
+    .breaking-news-marquee .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .news-label {
+        margin-bottom: 5px;
+        margin-right: 0;
+    }
+}
+/* ==================================== */
+/* 1. Global Variables (अगर नहीं हैं तो) */
+/* ==================================== */
+:root {
+    --primary-color: #007bff; /* नीला */
+    --secondary-color: #28a745; /* हरा */
+    --text-dark: #343a40;
+    --text-light: #f8f9fa;
+    --background-light: #f4f7f9;
+    --card-background: white;
+    --border-color: #e9ecef;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Poppins फ़ॉन्ट लागू करें */
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==================================== */
+/* 2. Top Strip (सूक्ष्म और पेशेवर) */
+/* ==================================== */
+.top-strip {
+    background-color: var(--text-dark); /* गहरा रंग */
+    color: var(--text-light);
+    font-size: 0.8em;
+    padding: 8px 0;
+}
+.top-strip .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.greeting-text {
+    margin: 0;
+    opacity: 0.8;
+}
+.top-admin-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.top-admin-link:hover {
+    color: white;
+}
+
+/* ==================================== */
+/* 3. Main Navbar (आकर्षक और एनिमेटेड) */
+/* ==================================== */
+.main-navbar {
+    background: var(--card-background);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky; /* पेज को स्क्रॉल करने पर बार को फिक्स रखता है */
+    top: 0;
+    z-index: 1000;
+    transition: padding 0.3s ease; /* स्क्रॉल इफ़ेक्ट के लिए */
+}
+.main-navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo a {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+/* Navigation Links */
+.main-nav {
+    display: flex;
+    gap: 20px;
+}
+.nav-item {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Animation Type: Bottom Border Effect */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease; /* एनीमेशन */
+}
+.nav-item:hover, .nav-item.active {
+    color: var(--primary-color);
+}
+
+/* Hover Animation */
+.nav-item:hover::after {
+    width: 100%;
+}
+.nav-item.active::after {
+    width: 100%; /* सक्रिय लिंक को हमेशा हाइलाइट करें */
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .main-navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .main-nav {
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+        margin-top: 10px;
+        /* छोटे स्क्रीन पर नेविगेशन को छिपाने के लिए JavaScript की आवश्यकता होगी */
+    }
+    .nav-item {
+        padding: 8px 0;
+        width: 100%;
+        border-bottom: 1px dotted var(--border-color);
+    }
+    .top-strip .container {
+        flex-direction: column;
+    }
+    .greeting-text {
+        margin-bottom: 5px;
+    }
+}
+/* ========================================= */
+/* Privacy Policy Page Styles (pages/privacy.php) */
+/* ========================================= */
+
+/* मुख्य कंटेनर के लिए पैडिंग */
+.container.my-5 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* हेडिंग और सब-हेडिंग को स्टाइल करना */
+.container h1 {
+    color: #343a40; /* Darker heading color */
+    font-weight: 700;
+    margin-bottom: 10px !important;
+}
+
+.container h2 {
+    color: #007bff; /* Primary blue color for sections */
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f8f9fa; /* Light separator line */
+    padding-bottom: 5px;
+}
+
+/* पैराग्राफ टेक्स्ट */
+.container p {
+    color: #495057;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* टेक्स्ट को सेंटर करना */
+.text-center {
+    text-align: center;
+}
+
+/* हॉरिजॉन्टल रूल को स्टाइल करना */
+hr {
+    border-top: 1px solid #dee2e6;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* लिस्ट आइटम (UL/LI) के लिए स्टाइल */
+.container ul {
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+.container ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #495057;
+}
+
+.container ul li strong {
+    color: #343a40;
+}
+
+/* संपर्क विवरण को हाईलाइट करना */
+.container p strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+
+/* मोबाइल रिस्पॉन्सिवनेस (Mobile Responsiveness) */
+@media (max-width: 768px) {
+    .container.my-5 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .container h1 {
+        font-size: 2rem;
+    }
+    .container h2 {
+        font-size: 1.5rem;
+    }
+    /* Note: In your screenshot, you already have a media query starting at line 823. */
+    /* If you want to put this entire media query block inside your existing one, you can. */
+    /* Otherwise, just paste it as a new block at the end. */
+}
+/* --- Global Reset and Typography --- */
+body {
+    font-family: 'Open Sans', Arial, sans-serif; /* Professional font family */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa; /* Very light, clean background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3 {
+    color: #1a237e; /* Darker, authoritative blue for headings */
+    font-weight: 700;
+}
+
+a {
+    color: #0277bd; /* Bright, click-worthy link color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #01579b;
+}
+
+/* --- Hero Section & Search (Modern Look) --- */
+.hero-section {
+    background: linear-gradient(135deg, #1e88e5 0%, #0d47a1 100%); /* Gradient background */
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 8px solid #ffc107; /* Pop of color */
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #bbdefb;
+    margin-bottom: 30px;
+}
+
+.stylish-search {
+    display: flex;
+    max-width: 650px;
+    margin: 20px auto 0;
+    border-radius: 50px; /* Rounded pill shape */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 15px 25px;
+    border: none;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.btn-search {
+    background-color: #ffc107; /* Yellow/Amber button */
+    color: #1a237e; /* Dark text on yellow */
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-search:hover {
+    background-color: #ffa000;
+}
+
+/* --- Marquee (Breaking News) --- */
+.breaking-news-marquee {
+    background-color: #fffde7; /* Very light yellow for attention */
+    border-bottom: 2px solid #ffb300;
+    padding: 10px 0;
+}
+
+.marquee-container-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.news-label {
+    background-color: #d32f2f; /* Deep Red for urgency */
+    color: white;
+    padding: 4px 12px;
+    font-weight: bold;
+    font-size: 0.9em;
+    border-radius: 4px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.marquee-content-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    width: 100%;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 30s linear infinite; 
+    padding-right: 100%;
+}
+
+.marquee-item {
+    padding: 0 25px;
+    font-size: 0.95rem;
+    color: #555;
+    display: inline-block;
+}
+
+.marquee-item:hover {
+    color: #1a237e;
+}
+
+.item-badge {
+    font-weight: 700;
+    margin-right: 5px;
+    color: #1a237e;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* --- Main Grid Layout --- */
+.main-content-area {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.main-grid {
+    display: flex;
+    gap: 30px;
+}
+
+.main-content-column {
+    flex: 3; 
+    min-width: 0;
+}
+
+.sidebar-column {
+    flex: 1; 
+    min-width: 280px;
+    padding-top: 10px;
+}
+
+/* --- Sidebar Widgets (Refined) --- */
+.sidebar-widget {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    border-left: 5px solid #0277bd; /* Clean border emphasis */
+}
+
+.sidebar-widget h3 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: #1a237e;
+}
+
+.sidebar-widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-widget li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.sidebar-widget li:last-child {
+    border-bottom: none;
+}
+
+/* --- AdSense Banners (Better Look) --- */
+.adsense-banner-top,
+.adsense-banner-bottom {
+    background: #e0f7fa; /* Very light cyan */
+    border: 1px solid #b2ebf2;
+    padding: 15px 0;
+    margin: 25px 0;
+    text-align: center;
+    border-radius: 8px;
+}
+.adsense-responsive-slot {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+}
+
+
+/* --- Category Tabs (Modern Pill Design) --- */
+.category-tabs {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #e3f2fd; /* Light blue base */
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; 
+}
+
+.tab-link {
+    flex-grow: 1;
+    text-align: center;
+    padding: 12px 20px;
+    font-weight: 600;
+    color: #0277bd;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    border-radius: 8px;
+    margin: 3px;
+    font-size: 1rem;
+}
+
+.tab-link:hover {
+    background-color: #bbdefb;
+    color: #1a237e;
+}
+
+.tab-link.active {
+    background-color: #1a237e; /* Dark active background */
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Section Titles --- */
+.section-title {
+    font-size: 2rem;
+    color: #1a237e;
+    border-bottom: 3px solid #ffc107; /* Job emphasis color */
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* --- Card Grid Layout --- */
+.card-grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.vacancy-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s, box-shadow 0.4s;
+    border-left: 6px solid; /* Placeholder for category color */
+    position: relative;
+}
+
+.vacancy-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.vacancy-card h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.vacancy-card h3 a {
+    color: #1a237e;
+    font-weight: 600;
+}
+
+.vacancy-card h3 a:hover {
+    color: #0277bd;
+}
+
+.short-desc {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    height: 48px; /* Slightly taller for two lines */
+    overflow: hidden;
+}
+
+/* --- Card Footer and Button --- */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0;
+}
+
+.btn-details {
+    padding: 10px 20px;
+    border-radius: 50px; /* Pill shape button */
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+.btn-details:hover {
+    transform: translateY(-1px);
+}
+
+/* --- Category Styling and Colors (Deep & Rich) --- */
+
+/* Job (Green - Success) */
+.badge-job, .card-job { border-color: #388e3c; } 
+.btn-job { background-color: #4CAF50; }
+.btn-job:hover { background-color: #388e3c; }
+.badge-job { background-color: #4CAF50; color: white; }
+
+/* Result (Orange/Yellow - Caution/Update) */
+.badge-result, .card-result { border-color: #f57f17; } 
+.btn-result { background-color: #FFB300; color: #1a237e; }
+.btn-result:hover { background-color: #f57f17; color: white; }
+.badge-result { background-color: #FFB300; color: #1a237e;}
+
+/* Admit Card (Red - Urgent) */
+.badge-admit_card, .card-admit_card { border-color: #d32f2f; }
+.btn-admit_card { background-color: #F44336; }
+.btn-admit_card:hover { background-color: #d32f2f; }
+.badge-admit_card { background-color: #F44336; color: white; }
+
+/* Other (Grey - Neutral) */
+.badge-other, .card-other { border-color: #616161; }
+.btn-other { background-color: #757575; }
+.btn-other:hover { background-color: #616161; }
+.badge-other { background-color: #757575; color: white; }
+
+/* --- Utility Classes (Alerts) --- */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alert.info {
+    background-color: #e3f2fd;
+    color: #1a237e;
+    border: 1px solid #90caf9;
+}
+
+.no-results-category {
+    grid-column: 1 / -1; 
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .main-grid {
+        flex-direction: column;
+    }
+    .sidebar-column {
+        min-width: 100%;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .stylish-search {
+        flex-direction: column;
+        border-radius: 8px;
+    }
+    .btn-search {
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 0 0 8px 8px;
+    }
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    .category-tabs {
+        flex-direction: column;
+    }
+    .tab-link {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+/* ====================================
+   Top Announcement & Marquee Styling (CSS)
+   ==================================== */
+
+/* टॉप पट्टी: 'सरकारी और निजी क्षेत्र की सभी अपडेट्स...' */
+.top-announcement-bar {
+    background: #007bff; /* Primary Blue for professional look */
+    color: white;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* ब्रेकिंग न्यूज़/लाइव नोटिफिकेशन पट्टी */
+.breaking-news-marquee {
+    background-color: #fff3cd; /* Light warning color */
+    border: 1px solid #ffeeba;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.marquee-container-wrapper {
+    display: flex; 
+    align-items: center;
+    overflow: hidden; /* <--- मुख्य सुधार: कंटेनर के बाहर के टेक्स्ट को छुपाता है */
+    white-space: nowrap;
+    max-width: 1400px; /* आपके मुख्य कंटेनर की चौड़ाई */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.news-label {
+    background: #dc3545; /* Red/Alert color */
+    color: white;
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 15px;
+    border-radius: 3px;
+    flex-shrink: 0; 
+}
+
+.marquee-content-wrapper {
+    display: flex;
+    overflow: hidden; 
+    width: 100%;
+}
+
+/* Marquee Animation को कंट्रोल करता है */
+.marquee-content {
+    display: inline-block;
+    padding-left: 100%; 
+    animation: marquee-scroll 70s linear infinite; /* गति को समायोजित करें */
+}
+
+/* यह सुनिश्चित करता है कि स्क्रॉलिंग लगातार हो */
+.marquee-content + .marquee-content {
+    padding-left: 0; 
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.marquee-item {
+    text-decoration: none;
+    color: #333;
+    padding-right: 30px; 
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.marquee-item:hover {
+    color: #007bff;
+}
+
+.item-badge {
+    font-weight: 600;
+    margin-right: 5px;
+    color: #dc3545; 
+}
+
+/* ====================================
+   Header & Footer Styling (यदि आवश्यक हो)
+   ==================================== */
+
+/* सुनिश्चित करें कि .main-header और .footer-grid में flexbox या grid का उपयोग किया गया है
+   ताकि सामग्री सही ढंग से व्यवस्थित हो सके। */
+.main-header {
+    /* सामान्य स्टाइलिंग */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+/* ====================================
+   Header & Navigation Styling (स्टाइलिश नेविगेशन)
+   ==================================== */
+
+.main-header {
+    background-color: #ffffff; /* सफ़ेद बैकग्राउंड */
+    border-bottom: 2px solid #007bff; /* नीचे एक हल्की ब्लू लाइन */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* हल्का शैडो */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    margin-right: 8px;
+    font-size: 28px;
+    color: #dc3545; /* थोड़ा कंट्रास्ट के लिए लाल */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px; /* लिंक्स के बीच दूरी बढ़ाना */
+}
+
+.main-nav .nav-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    position: relative; /* अंडरलाइन इफ़ेक्ट के लिए */
+}
+
+.main-nav .nav-link:hover {
+    color: #007bff; /* होवर पर नीला रंग */
+    /* background-color: #f0f0f0; */
+    transform: translateY(-2px); /* थोड़ा ऊपर उठा हुआ इफ़ेक्ट */
+}
+
+/* --- कैटेगरी-विशिष्ट स्टाइलिंग --- */
+
+/* Result लिंक को आकर्षक बनाना (उदाहरण के लिए हरा) */
+.main-nav .nav-link-result {
+    background-color: #28a745; /* हरा बैकग्राउंड */
+    color: white;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.main-nav .nav-link-result:hover {
+    background-color: #218838;
+    color: white;
+}
+
+/* Admit Card लिंक को आकर्षक बनाना (उदाहरण के लिए नारंगी/पीला) */
+.main-nav .nav-link-admit {
+    background-color: #ffc107; /* नारंगी बैकग्राउंड */
+    color: #333;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(255, 193, 7, 0.4);
+}
+
+.main-nav .nav-link-admit:hover {
+    background-color: #e0a800;
+    color: #333;
+}
+
+/* Home और Contact के लिए सॉफ्ट अंडरलाइन इफ़ेक्ट */
+.main-nav .nav-link-home::after,
+.main-nav .nav-link-contact::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    transition: width 0.3s ease-out;
+}
+
+.main-nav .nav-link-home:hover::after,
+.main-nav .nav-link-contact:hover::after {
+    width: 80%;
+}
+/* ========================================================== */
+/* MAIN FOOTER STYLING */
+/* ========================================================== */
+
+.main-footer {
+    background-color: #343a40; /* गहरा बैकग्राउंड */
+    color: #ffffff;
+    padding-top: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.main-footer h4 {
+    color: #ffc107; /* हेडिंग के लिए पीला रंग */
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #495057; /* हल्का बॉर्डर */
+    padding-bottom: 5px;
+}
+
+/* ग्रिड लेआउट - तीन कॉलम बनाने के लिए */
+.footer-grid {
+    display: grid;
+    /* 2fr का उपयोग करके 'About' कॉलम को अन्य की तुलना में अधिक चौड़ा करें */
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 30px; /* कॉलम के बीच की दूरी */
+    padding-bottom: 30px;
+}
+
+/* सामान्य लिंक स्टाइलिंग */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col li {
+    margin-bottom: 8px;
+}
+
+.footer-col a {
+    color: #cccccc; /* लिंक के लिए हल्का ग्रे रंग */
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 15px;
+}
+
+.footer-col a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* फुटर बॉटम (कॉपीराइट और एडमिन लिंक) */
+.footer-bottom {
+    background-color: #2b3035; /* थोड़ा गहरा रंग */
+    border-top: 1px solid #3c444c;
+    padding: 15px 0;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between; /* सामग्री को दोनों किनारों पर फैलाता है */
+    align-items: center;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.admin-link {
+    color: #17a2b8 !important; /* एडमिन लिंक के लिए नीला रंग */
+    font-weight: bold;
+}
+
+/* ========================================================== */
+/* RESPONSIVE DESIGN (मोबाइल के लिए) */
+/* ========================================================== */
+
+@media (max-width: 768px) {
+    .footer-grid {
+        /* मोबाइल पर, सभी कॉलम को एक के ऊपर एक स्टैक करें */
+        grid-template-columns: 1fr;
+    }
+    
+    /* प्रत्येक कॉलम के बीच गैप को साफ करें */
+    .footer-col {
+        margin-bottom: 20px;
+    }
+
+    /* फुटर बॉटम को स्टैक करें */
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-bottom-content .copyright {
+        margin-bottom: 10px;
+    }
+}
+/* ========================================================== */
+/* CONTACT PAGE STYLING */
+/* ========================================================== */
+
+.contact-page-wrapper {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+/* ग्रिड लेआउट (मुख्य सामग्री + साइडबार) */
+.contact-page-wrapper .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-page-wrapper .col-main {
+    flex: 3;
+    min-width: 65%;
+}
+
+.contact-page-wrapper .col-sidebar {
+    flex: 1;
+    min-width: 250px;
+    background: #f8f9fa; /* हल्का ग्रे बैकग्राउंड */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.contact-page-wrapper h1 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+}
+
+.lead-text {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* फ़ॉर्म स्टाइल */
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* पैडिंग को चौड़ाई में शामिल करें */
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.contact-form textarea {
+    resize: vertical; /* केवल ऊर्ध्वाधर रीसाइज़िंग की अनुमति दें */
+}
+
+.btn-submit {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #218838;
+}
+
+/* साइडबार सूचना बॉक्स */
+.info-box {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #ffffff;
+    border-left: 3px solid #007bff;
+    border-radius: 4px;
+}
+.info-box h4 {
+    color: #007bff;
+    margin-top: 0;
+}
+.info-box p a {
+    color: #333;
+    font-weight: bold;
+}
+.info-box small {
+    display: block;
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* संदेश/Alert स्टाइल */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-page-wrapper .row {
+        flex-direction: column;
+    }
+    .contact-page-wrapper .col-main,
+    .contact-page-wrapper .col-sidebar {
+        min-width: 100%;
+    }
+}

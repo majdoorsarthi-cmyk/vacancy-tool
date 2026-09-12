@@ -1,0 +1,311 @@
+/**
+ * Vacancy Details Style - Highly Polished & Premium UI Layout
+ */
+
+/* ==========================================
+   1. GLOBAL RESET & BASE
+   ========================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hind', 'Poppins', sans-serif;
+    background-color: #f1f5f9;
+    margin: 0;
+    padding: 0;
+    color: #0f172a;
+    line-height: 1.6;
+}
+
+.portal-wrapper {
+    max-width: 1050px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+
+.job-card-box {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    border: 1px solid #e2e8f0;
+}
+
+/* ==========================================
+   2. JOB HEADER (Ultra-Attractive & Premium)
+   ========================================== */
+.job-header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 20px;
+}
+
+.job-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    letter-spacing: 0.3px;
+}
+
+.job-title-main {
+    font-size: 30px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 14px 0;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+}
+
+.job-subtitle {
+    font-size: 15.5px;
+    color: #334155;
+    margin: 0;
+    line-height: 1.7;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 14px 18px;
+    border-radius: 10px;
+    border-left: 4px solid #2563eb;
+    border-top: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* ==========================================
+   3. TABLES DESIGN (Exact Match to Screenshot)
+   ========================================== */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 25px;
+}
+
+.job-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table Header (Top Section Titles like "महत्वपूर्ण तिथियां") */
+.job-table thead th {
+    background-color: #f8fafc;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.job-table thead th i {
+    color: #2563eb;
+    margin-right: 8px;
+}
+
+/* Table Body Cells */
+.job-table tbody td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 15px;
+    color: #334155;
+    vertical-align: top;
+}
+
+.job-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.job-table .label-col {
+    font-weight: 600;
+    color: #1e293b;
+    width: 40%;
+}
+
+.long-text-area {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   4. IMPORTANT DIRECT LINKS BUTTONS
+   ========================================== */
+.link-row-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    background-color: #2563eb;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.link-row-btn:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transform: translateY(-1px);
+}
+
+.link-row-btn.green {
+    background-color: #16a34a;
+}
+.link-row-btn.green:hover {
+    background-color: #15803d;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+.link-row-btn.red {
+    background-color: #dc2626;
+}
+.link-row-btn.red:hover {
+    background-color: #b91c1c;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.link-row-btn.whatsapp {
+    background-color: #25d366;
+}
+.link-row-btn.whatsapp:hover {
+    background-color: #1eb857;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+/* ==========================================
+   5. FAQ SECTION
+   ========================================== */
+.faq-container {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+}
+
+.faq-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.faq-title i {
+    color: #2563eb;
+}
+
+.faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.faq-question {
+    font-weight: 600;
+    font-size: 15px;
+    color: #1e293b;
+    cursor: pointer;
+    outline: none;
+}
+
+.faq-answer {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #475569;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+}
+
+/* ==========================================
+   6. SHARE FOOTER STRIP
+   ========================================== */
+.share-box {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-share {
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-share:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   7. RESPONSIVE (MOBILE VIEW)
+   ========================================== */
+@media (max-width: 768px) {
+    .portal-wrapper {
+        padding: 0 8px;
+        margin: 10px auto;
+    }
+
+    .job-card-box {
+        padding: 18px;
+    }
+
+    .job-title-main {
+        font-size: 22px;
+    }
+
+    .job-table thead th, 
+    .job-table tbody td {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .share-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .share-box > div {
+        width: 100%;
+    }
+
+    .btn-share {
+        flex: 1;
+        justify-content: center;
+    }
+}
