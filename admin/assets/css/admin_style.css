@@ -1,0 +1,410 @@
+/* ==================================== */
+/* 1. Global Variables and Reset */
+/* ==================================== */
+:root {
+    /* सुपर डायनेमिक और ब्राइट ग्रेडिएंट कलर्स */
+    --sidebar-grad-start: #0f172a; /* गहरा कॉस्मिक स्लेट */
+    --sidebar-grad-mid: #1e1b4b;   /* गहरा वाइब्रेंट इंडिगो */
+    --sidebar-grad-end: #311042;   /* नियॉन मैजेंटा शेड का हिंट */
+    
+    /* डायनेमिक स्टेट्स के लिए नियॉन ग्लो कलर्स */
+    --primary-highlight: #06b6d4; /* इलेक्ट्रिक सायान (Cyan) */
+    --accent-color: #10b981;      /* ब्राइट नियॉन ग्रीन */
+    --danger-color: #f43f5e;      /* वाइब्रेंट रोज़ रेड */
+    --warning-color: #f59e0b;     /* वार्म अम्बर गोल्ड */
+    
+    --text-light: #f8fafc;
+    --text-dark: #0f172a;
+    --page-bg: #f8fafc;
+    --card-bg: #ffffff;
+    
+    /* एडवांस शैडो इफ़ेक्ट्स */
+    --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.04), 0 1px 8px rgba(15, 23, 42, 0.02);
+    --btn-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    --sidebar-hover-bg: rgba(6, 182, 212, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--page-bg);
+    color: var(--text-dark);
+}
+
+/* ==================================== */
+/* 2. Main Layout (Flexbox) */
+/* ==================================== */
+#wrapper {
+    display: flex; 
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* ==================================== */
+/* 3. Sidebar Styling (अत्यधिक कलरफुल और डायनेमिक) */
+/* ==================================== */
+#sidebar-wrapper {
+    width: 270px;
+    background: linear-gradient(180deg, var(--sidebar-grad-start) 0%, var(--sidebar-grad-mid) 50%, var(--sidebar-grad-end) 100%);
+    color: var(--text-light);
+    box-shadow: 5px 0 25px rgba(15, 23, 42, 0.15);
+    position: sticky;
+    top: 0;
+    flex-shrink: 0; 
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-brand {
+    padding: 25px 20px;
+    font-size: 1.35em;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.sidebar-brand a {
+    color: #ffffff;
+    text-decoration: none;
+    background: linear-gradient(to right, #22d3ee, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+.sidebar-nav li a {
+    display: block;
+    padding: 15px 22px;
+    text-decoration: none;
+    color: rgba(248, 250, 252, 0.8);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1em;
+    font-weight: 500;
+    position: relative;
+}
+
+/* मुख्य मेनू लिंक्स पर डायनेमिक नियॉन ग्लो होवर इफ़ेक्ट */
+.sidebar-nav li a:hover,
+.sidebar-nav li.active > a { 
+    background: var(--sidebar-hover-bg);
+    color: #ffffff;
+    padding-left: 26px;
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+.sidebar-nav li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(to bottom, #22d3ee, #06b6d4);
+    transform: scaleY(0);
+    transition: transform 0.25s ease;
+}
+
+.sidebar-nav li a:hover::before,
+.sidebar-nav li.active > a::before {
+    transform: scaleY(1);
+}
+
+/* ─── डायनेमिक ड्रॉपडाउन और सब-मेन्यू डिज़ाइन ─── */
+.sidebar-dropdown {
+    position: relative;
+}
+
+.sidebar-nav .submenu {
+    display: none;
+    list-style: none;
+    padding: 6px 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* एक्टिव होने पर सब-मेन्यू दिखाएं */
+.sidebar-dropdown.active > .submenu {
+    display: block !important;
+}
+
+/* सब-मेन्यू लिंक्स का कलरफुल स्टाइल */
+.sidebar-nav .submenu li a {
+    padding: 10px 20px 10px 48px;
+    font-size: 0.92em;
+    color: rgba(248, 250, 252, 0.65);
+}
+
+.sidebar-nav .submenu li a::before {
+    width: 3px;
+    background: linear-gradient(to bottom, #a855f7, #ec4899); /* सब-मेन्यू के लिए अलग कलर बार */
+}
+
+/* सब-मेन्यू होवर और एक्टिव स्टेट */
+.sidebar-nav .submenu li a:hover,
+.sidebar-nav .submenu li.active a {
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.03);
+    padding-left: 52px;
+}
+
+/* ड्रॉपडाउन एरो इंडिकेटर */
+.sidebar-dropdown > a.dropdown-toggle::after {
+    content: ' ▾';
+    font-size: 0.85em;
+    float: right;
+    transition: transform 0.3s ease;
+    color: rgba(255, 255, 255, 0.4);
+}
+.sidebar-dropdown.active > a.dropdown-toggle::after {
+    transform: rotate(180deg);
+    color: var(--primary-highlight);
+}
+
+/* ==================================== */
+/* 4. Page Content Area */
+/* ==================================== */
+#page-content-wrapper {
+    width: 100%;
+    padding: 35px;
+    background-color: var(--page-bg);
+    flex-grow: 1;
+}
+
+.container-fluid h2 {
+    color: var(--text-dark);
+    font-weight: 800;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #f1f5f9;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+/* Summary Cards (Dashboard) */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.row > div {
+    flex: 1;
+    min-width: 260px;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #f1f5f9;
+    position: relative;
+    overflow: hidden;
+}
+
+/* कार्ड्स को आकर्षक और रंगीन बॉर्डर लुक देने के लिए */
+.row > div::top-bar {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(to right, var(--primary-highlight), #a855f7);
+}
+
+.row > div:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(15, 23, 42, 0.08);
+}
+
+.row h3 {
+    color: #64748b;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.row h1 {
+    font-size: 2.6em;
+    margin: 10px 0 0;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -1px;
+}
+
+/* ==================================== */
+/* 5. Forms & Input Styling */
+/* ==================================== */
+.admin-form label {
+    display: block;
+    margin-top: 18px;
+    font-weight: 600;
+    color: #334155;
+    font-size: 0.95em;
+}
+
+.admin-form input[type="text"], 
+.admin-form input[type="password"], 
+.admin-form input[type="email"], 
+.admin-form textarea, 
+.admin-form select {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    font-size: 1em;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.01);
+}
+
+.admin-form input:focus, 
+.admin-form textarea:focus, 
+.admin-form select:focus {
+    border-color: var(--primary-highlight);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.15);
+    background-color: #fff;
+}
+
+/* ==================================== */
+/* 6. High-End Stylish Buttons (सारे बटन अब 3D और स्टाइलिश हैं) */
+/* ==================================== */
+
+/* मुख्य सबमिट बटन */
+.admin-form button, .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-color) 0%, #059669 100%); 
+    color: white;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    transition: all 0.25s ease;
+    text-align: center;
+}
+
+.admin-form button:hover, .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    opacity: 0.95;
+}
+
+.admin-form button:active, .btn-primary:active {
+    transform: translateY(1px);
+}
+
+/* ==================================== */
+/* 7. Table & Action Buttons (कलरफुल कैप्सूल बटन) */
+/* ==================================== */
+.admin-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 30px; 
+    background: var(--card-bg); 
+    box-shadow: var(--card-shadow);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #f1f5f9;
+}
+
+.admin-table th { 
+    background-color: #f8fafc; 
+    color: #64748b; 
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #edf2f7;
+    padding: 18px 20px;
+    text-align: left;
+}
+
+.admin-table td { 
+    border-bottom: 1px solid #f1f5f9; 
+    padding: 16px 20px; 
+    text-align: left; 
+    color: #334155;
+    font-size: 0.95em;
+}
+
+.admin-table tr:hover {
+    background-color: rgba(248, 250, 252, 0.75);
+}
+
+/* टेबल के अंदर एक्शन बटन को बेहद शानदार कैप्सूल लुक दिया गया है */
+.admin-table td a { 
+    padding: 7px 18px;
+    border-radius: 25px; /* कैप्सूल डिज़ाइन */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.82em;
+    margin-right: 8px; 
+    display: inline-block;
+    letter-spacing: 0.3px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+}
+
+.admin-table td a:hover {
+    transform: translateY(-2px);
+}
+
+/* 3D इफ़ेक्ट के साथ डायनेमिक एडिट बटन (Amber Yellow) */
+.btn-edit { 
+    background: linear-gradient(135deg, var(--warning-color) 0%, #d97706 100%); 
+    color: white !important; 
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+}
+.btn-edit:hover { 
+    box-shadow: 0 6px 15px rgba(245, 158, 11, 0.45);
+}
+
+/* 3D इफ़ेक्ट के साथ डायनेमिक डिलीट बटन (Neon Red) */
+.btn-delete { 
+    background: linear-gradient(135deg, var(--danger-color) 0%, #e11d48 100%); 
+    color: white !important; 
+    box-shadow: 0 4px 10px rgba(244, 63, 94, 0.3);
+}
+.btn-delete:hover { 
+    box-shadow: 0 6px 15px rgba(244, 63, 94, 0.45);
+}
+
+/* ==================================== */
+/* 8. Responsive Adjustments */
+/* ==================================== */
+@media (max-width: 768px) {
+    #wrapper {
+        flex-direction: column;
+    }
+    #sidebar-wrapper {
+        width: 100%;
+        min-height: auto;
+        position: relative;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .sidebar-nav .submenu li a {
+        padding-left: 35px;
+    }
+}
